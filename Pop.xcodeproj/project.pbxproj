@@ -10,8 +10,11 @@
 		61556176397BF8398D1E2827 /* Pods_Pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D4F51DDBFBDA4D2D708AEF /* Pods_Pop.framework */; };
 		F828BF501E085F8400957560 /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F828BF4F1E085F8400957560 /* AKPickerView.swift */; };
 		F828BF521E0872A100957560 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F828BF511E0872A100957560 /* UIImageExtension.swift */; };
+		F8A484C81E09B072000CB81C /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A484C71E09B072000CB81C /* PageViewController.swift */; };
+		F8A484CA1E09B26F000CB81C /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A484C91E09B26F000CB81C /* PopViewController.swift */; };
+		F8A484CC1E09F2E5000CB81C /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A484CB1E09F2E5000CB81C /* GeneralViewController.swift */; };
 		F8B025891E04CBC6009550B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B025881E04CBC6009550B0 /* AppDelegate.swift */; };
-		F8B0258B1E04CBC6009550B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B0258A1E04CBC6009550B0 /* ViewController.swift */; };
+		F8B0258B1E04CBC6009550B0 /* ThoughtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B0258A1E04CBC6009550B0 /* ThoughtViewController.swift */; };
 		F8B025901E04CBC6009550B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B0258F1E04CBC6009550B0 /* Assets.xcassets */; };
 		F8B025931E04CBC6009550B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8B025911E04CBC6009550B0 /* LaunchScreen.storyboard */; };
 		F8B0259E1E04CBC6009550B0 /* PopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B0259D1E04CBC6009550B0 /* PopTests.swift */; };
@@ -43,9 +46,12 @@
 		F7D4F51DDBFBDA4D2D708AEF /* Pods_Pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F828BF4F1E085F8400957560 /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPickerView.swift; sourceTree = "<group>"; };
 		F828BF511E0872A100957560 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		F8A484C71E09B072000CB81C /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		F8A484C91E09B26F000CB81C /* PopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
+		F8A484CB1E09F2E5000CB81C /* GeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
 		F8B025851E04CBC6009550B0 /* Pop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B025881E04CBC6009550B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F8B0258A1E04CBC6009550B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F8B0258A1E04CBC6009550B0 /* ThoughtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtViewController.swift; sourceTree = "<group>"; };
 		F8B0258F1E04CBC6009550B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8B025921E04CBC6009550B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8B025941E04CBC6009550B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -128,7 +134,10 @@
 			isa = PBXGroup;
 			children = (
 				F8B025881E04CBC6009550B0 /* AppDelegate.swift */,
-				F8B0258A1E04CBC6009550B0 /* ViewController.swift */,
+				F8A484C71E09B072000CB81C /* PageViewController.swift */,
+				F8A484CB1E09F2E5000CB81C /* GeneralViewController.swift */,
+				F8A484C91E09B26F000CB81C /* PopViewController.swift */,
+				F8B0258A1E04CBC6009550B0 /* ThoughtViewController.swift */,
 				F828BF511E0872A100957560 /* UIImageExtension.swift */,
 				F8B025B61E05BDB1009550B0 /* CustomTextField.swift */,
 				F8B025B81E05BF92009550B0 /* CustomTextView.swift */,
@@ -342,10 +351,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A484CA1E09B26F000CB81C /* PopViewController.swift in Sources */,
 				F828BF501E085F8400957560 /* AKPickerView.swift in Sources */,
-				F8B0258B1E04CBC6009550B0 /* ViewController.swift in Sources */,
+				F8A484C81E09B072000CB81C /* PageViewController.swift in Sources */,
+				F8B0258B1E04CBC6009550B0 /* ThoughtViewController.swift in Sources */,
 				F8B025891E04CBC6009550B0 /* AppDelegate.swift in Sources */,
 				F8B025B91E05BF92009550B0 /* CustomTextView.swift in Sources */,
+				F8A484CC1E09F2E5000CB81C /* GeneralViewController.swift in Sources */,
 				F8B025B71E05BDB1009550B0 /* CustomTextField.swift in Sources */,
 				F828BF521E0872A100957560 /* UIImageExtension.swift in Sources */,
 			);
