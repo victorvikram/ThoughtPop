@@ -21,7 +21,7 @@ class CustomTextField: UITextField {
         // adds the bottom border
         let width = CGFloat(2.0)
         borderColor = color
-        border.borderColor = borderColor.cgColor
+        border.borderColor = borderColor.withAlphaComponent(0.5).cgColor
         border.frame = CGRect(x: 0, y: frame.size.height - width, width:  frame.size.width, height: frame.size.height)
         border.borderWidth = width
         layer.addSublayer(border)
@@ -34,6 +34,10 @@ class CustomTextField: UITextField {
         // adds selection animations
         self.addTarget(self, action: #selector(fieldSelected), for: UIControlEvents.editingDidBegin)
         self.addTarget(self, action: #selector(fieldDeselected), for: UIControlEvents.editingDidEnd)
+        
+        // changes certain properties
+        adjustsFontSizeToFitWidth = true
+        minimumFontSize = 22
     }
     
     /* required initializer */
@@ -48,7 +52,7 @@ class CustomTextField: UITextField {
         UIView.animate(withDuration: 5,
                        delay: 0.0,
                        options: .curveEaseIn,
-                       animations: { self.border.opacity = 1.0 } ,
+                       animations: { self.border.borderColor = self.borderColor.withAlphaComponent(1.0).cgColor } ,
                        completion: nil)
         
     }
@@ -60,7 +64,7 @@ class CustomTextField: UITextField {
         UIView.animate(withDuration: 2,
                        delay: 0.0,
                        options: .curveEaseIn,
-                       animations: { self.border.opacity = 0.5 } ,
+                       animations: { self.border.borderColor = self.borderColor.withAlphaComponent(0.5).cgColor } ,
                        completion: nil)
     }
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		61556176397BF8398D1E2827 /* Pods_Pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7D4F51DDBFBDA4D2D708AEF /* Pods_Pop.framework */; };
+		F816B0A91E0C7F3600930D45 /* ZFRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816B0A81E0C7F3600930D45 /* ZFRippleButton.swift */; };
+		F816B0AB1E0D8F0F00930D45 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816B0AA1E0D8F0F00930D45 /* SettingsViewController.swift */; };
+		F816B0AD1E0D99B700930D45 /* UniversalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816B0AC1E0D99B700930D45 /* UniversalViewController.swift */; };
 		F828BF501E085F8400957560 /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F828BF4F1E085F8400957560 /* AKPickerView.swift */; };
 		F828BF521E0872A100957560 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F828BF511E0872A100957560 /* UIImageExtension.swift */; };
 		F8A484C81E09B072000CB81C /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A484C71E09B072000CB81C /* PageViewController.swift */; };
@@ -44,6 +47,9 @@
 		883F51738FA3DC80A1ECF546 /* Pods-Pop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pop.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pop/Pods-Pop.release.xcconfig"; sourceTree = "<group>"; };
 		DA5D07650D9F66BE2786DAD4 /* Pods-Pop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pop/Pods-Pop.debug.xcconfig"; sourceTree = "<group>"; };
 		F7D4F51DDBFBDA4D2D708AEF /* Pods_Pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F816B0A81E0C7F3600930D45 /* ZFRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZFRippleButton.swift; sourceTree = "<group>"; };
+		F816B0AA1E0D8F0F00930D45 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F816B0AC1E0D99B700930D45 /* UniversalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalViewController.swift; sourceTree = "<group>"; };
 		F828BF4F1E085F8400957560 /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPickerView.swift; sourceTree = "<group>"; };
 		F828BF511E0872A100957560 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		F8A484C71E09B072000CB81C /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -136,12 +142,15 @@
 				F8B025881E04CBC6009550B0 /* AppDelegate.swift */,
 				F8A484C71E09B072000CB81C /* PageViewController.swift */,
 				F8A484CB1E09F2E5000CB81C /* GeneralViewController.swift */,
+				F816B0AC1E0D99B700930D45 /* UniversalViewController.swift */,
 				F8A484C91E09B26F000CB81C /* PopViewController.swift */,
 				F8B0258A1E04CBC6009550B0 /* ThoughtViewController.swift */,
+				F816B0AA1E0D8F0F00930D45 /* SettingsViewController.swift */,
 				F828BF511E0872A100957560 /* UIImageExtension.swift */,
 				F8B025B61E05BDB1009550B0 /* CustomTextField.swift */,
 				F8B025B81E05BF92009550B0 /* CustomTextView.swift */,
 				F828BF4F1E085F8400957560 /* AKPickerView.swift */,
+				F816B0A81E0C7F3600930D45 /* ZFRippleButton.swift */,
 				F8B0258F1E04CBC6009550B0 /* Assets.xcassets */,
 				F8B025911E04CBC6009550B0 /* LaunchScreen.storyboard */,
 				F8B025941E04CBC6009550B0 /* Info.plist */,
@@ -351,9 +360,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F816B0AD1E0D99B700930D45 /* UniversalViewController.swift in Sources */,
 				F8A484CA1E09B26F000CB81C /* PopViewController.swift in Sources */,
 				F828BF501E085F8400957560 /* AKPickerView.swift in Sources */,
+				F816B0AB1E0D8F0F00930D45 /* SettingsViewController.swift in Sources */,
 				F8A484C81E09B072000CB81C /* PageViewController.swift in Sources */,
+				F816B0A91E0C7F3600930D45 /* ZFRippleButton.swift in Sources */,
 				F8B0258B1E04CBC6009550B0 /* ThoughtViewController.swift in Sources */,
 				F8B025891E04CBC6009550B0 /* AppDelegate.swift in Sources */,
 				F8B025B91E05BF92009550B0 /* CustomTextView.swift in Sources */,

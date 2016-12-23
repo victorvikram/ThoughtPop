@@ -11,7 +11,8 @@ import UIKit
 class PopViewController: GeneralViewController {
     
     // Color
-    let background = UIColor(displayP3Red: 47/255, green: 0, blue: 122/255, alpha: 1.0)
+    let background = UIColor(displayP3Red: 100/255, green: 5/255, blue: 255/255, alpha: 1.0)
+    let lastBackground = UIColor(displayP3Red: 75/255, green: 0, blue: 200/255, alpha: 1.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,12 @@ class PopViewController: GeneralViewController {
         return #imageLiteral(resourceName: "view").withRenderingMode(.alwaysTemplate)
     }
     
-
+    /* gets the background color */
+    override func getBackground() -> UIColor {
+        return background
+    }
+    
+    
     /*
     // MARK: - Navigation
 

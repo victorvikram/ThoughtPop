@@ -10,6 +10,9 @@ import UIKit
 
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource, UIGestureRecognizerDelegate {
     
+    var orderedViewControllers: [UIViewController]!
+    var lastViewController: UIViewController!
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
     }
@@ -18,7 +21,11 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         super.viewDidLoad()
     
         dataSource = self
-        let viewControllers = [ThoughtViewController()]
+        orderedViewControllers = [SettingsViewController(pageViewController: self), ThoughtViewController(pageViewController: self), PopViewController(pageViewController: self)]
+
+        lastViewController = orderedViewControllers[2]
+        let firstViewController = orderedViewControllers[1]
+        let viewControllers = [firstViewController]
         setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
         
         if let _ = view.gestureRecognizers {
@@ -32,21 +39,43 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
     
     // PageViewController Datasource
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        if let _ = viewController as? ThoughtViewController {
-            return PopViewController()
+        
+        let currentVCIndex = orderedViewControllers.index(of: viewController)
+        let nextVCIndex = currentVCIndex! < orderedViewControllers.count - 1 ? currentVCIndex! + 1 : 0
+        lastViewController = viewController
+        
+        return orderedViewControllers[nextVCIndex]
+        
+        /*if let _ = viewController as? ThoughtViewController {
+            return PopViewController(lastBackground: ThoughtViewController().background)
+        }
+        else if let _ = viewController as? SettingsViewController  {
+            return ThoughtViewController(lastBackground: SettingsViewController().background)
         }
         else {
             return nil
-        }
+        }*/
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        
+        let currentVCIndex = orderedViewControllers.index(of: viewController)
+        let nextVCIndex = currentVCIndex! > 0 ? currentVCIndex! - 1 : orderedViewControllers.count - 1
+        lastViewController = viewController
+        
+        return orderedViewControllers[nextVCIndex]
+        
+        /*
         if let _ = viewController as? PopViewController {
-            return ThoughtViewController()
+            print("in here")
+            return ThoughtViewController(lastBackground: PopViewController().background)
+        }
+        else if let _ = viewController as? ThoughtViewController  {
+            return SettingsViewController()
         }
         else {
             return nil
-        }
+        }*/
     }
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
@@ -54,7 +83,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
             let touchPoint = touch .location(in: self.view)
             if (touchPoint.y > 40 ){
                 return false
-            }else{
+            } else{
                 return true
             }
         }
