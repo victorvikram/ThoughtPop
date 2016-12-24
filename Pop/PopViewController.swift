@@ -21,7 +21,7 @@ class PopViewController: GeneralViewController {
         
         // Lower UIView is the location of all the components underneath the body text view
         lowerUIView.backgroundColor = .clear
-        lowerUIView.frame = CGRect(x: 0, y: 2 * margin, width: view.frame.width, height: view.frame.height)
+        lowerUIView.frame = CGRect(x: 0, y: 0.75 * margin, width: view.frame.width, height: view.frame.height)
         view.addSubview(lowerUIView)
     }
 

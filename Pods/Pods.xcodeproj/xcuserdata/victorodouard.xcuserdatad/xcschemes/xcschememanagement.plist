@@ -9,10 +9,20 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SMPageControl.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5E90AFCA66B5D37DF1255C8692304BDB</key>
+		<key>1B675F46CC55F34FB9A1A73E73E68807</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F870C1EFFD8D93484C0FA55F5DA9E370</key>
 		<dict>
 			<key>primary</key>
 			<true/>

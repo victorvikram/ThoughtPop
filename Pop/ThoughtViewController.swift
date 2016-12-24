@@ -18,7 +18,9 @@ class ThoughtViewController: GeneralViewController, UITextViewDelegate {
     
     // UI Elements
     var titleTextField: CustomTextField!
+    let titleTextFieldLabel = UILabel()
     var bodyTextView: CustomTextView!
+    let bodyTextViewLabel = UILabel()
     let locationButton = ZFRippleButton()
     let timeButton = ZFRippleButton()
     var frequencyButton = ZFRippleButton()
@@ -36,9 +38,17 @@ class ThoughtViewController: GeneralViewController, UITextViewDelegate {
         // Title Text Field
         addTitleTextField()
         
+        // Title Text Field Label
+        titleTextFieldLabel.text = "Title"
+        addLabel(label: titleTextFieldLabel, alignment: .left, frame: CGRect(x: titleTextField.frame.minX, y: titleTextField.frame.maxY, width: 100, height: fontSize + 7), center: nil, superFrame: nil)
+        
         // Body Textview 
         addBodyTextView()
         
+        // Body Text View Label
+        bodyTextViewLabel.text = "Body"
+        addLabel(label: bodyTextViewLabel, alignment: .left, frame: CGRect(x: margin, y: 0, width: 100, height: fontSize + 7), center: nil, superFrame: lowerUIView)
+
         // Lower UIView is the location of all the components underneath the body text view
         lowerUIView.backgroundColor = .clear
         lowerUIView.frame = CGRect(x: 0, y: 6 * margin, width: view.frame.width, height: view.frame.height)
@@ -46,16 +56,16 @@ class ThoughtViewController: GeneralViewController, UITextViewDelegate {
         
         // Location Button
         let locationImage = #imageLiteral(resourceName: "location").withRenderingMode(.alwaysTemplate)
-        addButton(button: locationButton, image: locationImage, x: 1/4, y: 1, wFactor: 1.5, hFactor: 1.5)
+        addButton(button: locationButton, image: locationImage, x: 1/4, y: 1.25, wFactor: 1.5, hFactor: 1.5)
         
         
         // Time Button
         let timeImage = #imageLiteral(resourceName: "time").withRenderingMode(.alwaysTemplate)
-        addButton(button: timeButton, image: timeImage, x: 1/2, y: 1, wFactor: 1.5, hFactor: 1.5)
+        addButton(button: timeButton, image: timeImage, x: 1/2, y: 1.25, wFactor: 1.5, hFactor: 1.5)
         
         // Frequency Button
         let frequencyImage = #imageLiteral(resourceName: "frequency").withRenderingMode(.alwaysTemplate)
-        addButton(button: frequencyButton, image: frequencyImage, x: 3/4, y: 1, wFactor: 1.5, hFactor: 1.5)
+        addButton(button: frequencyButton, image: frequencyImage, x: 3/4, y: 1.25, wFactor: 1.5, hFactor: 1.5)
     }
     
     // Layout Functions

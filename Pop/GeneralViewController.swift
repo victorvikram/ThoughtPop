@@ -11,32 +11,21 @@ import UIKit
 class GeneralViewController: UniversalViewController, AKPickerViewDelegate, AKPickerViewDataSource {
     
     
-    
-    // Dimensions
-    let scaleMargin = CGFloat(0.05)
-    var margin: CGFloat!
-    
-    // Color
-    let UIElementColor = UIColor(displayP3Red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
-    
+        
     // Emoji array
     var emojiArray = [#imageLiteral(resourceName: "angry"), #imageLiteral(resourceName: "any"), #imageLiteral(resourceName: "bored"), #imageLiteral(resourceName: "confused"), #imageLiteral(resourceName: "crying"), #imageLiteral(resourceName: "embarrassed"), #imageLiteral(resourceName: "happy"), #imageLiteral(resourceName: "in-love"), #imageLiteral(resourceName: "nervous"), #imageLiteral(resourceName: "neutral"), #imageLiteral(resourceName: "sad"), #imageLiteral(resourceName: "sleepy"), #imageLiteral(resourceName: "surprised")]
     let emojiNameArray = ["Angry", "Any", "Bored", "Confused", "Crying", "Embarrassed", "Happy", "In Love", "Nervous", "Neutral", "Sad", "Sleepy", "Surprised" ]
     
     // UI Elements
-    let headerImageView = UIImageView()
+    
     let lowerUIView = UIView()
     var emojiPickerView: AKPickerView!
     let mainButton = ZFRippleButton()
+    let emojiUILabel = UILabel()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        margin = scaleMargin * view.frame.height
-
-        // Header Image
-        addHeader()
         
         // Emoji PickerView
         addEmojiPickerView()
@@ -44,18 +33,27 @@ class GeneralViewController: UniversalViewController, AKPickerViewDelegate, AKPi
         // Check Button
         let mainButtonImage = getMainButtonImage()
         addButton(button: mainButton, image: mainButtonImage, x: 1/2, y: 5.5, wFactor: 2.1875, hFactor: 1.25, mainButton: true)
-
+        
+        // emojiUILabel Setup
+        addLabel(label: emojiUILabel, alignment: .center, frame: nil, center: CGPoint(x: view.frame.width / 2, y: emojiPickerView.center.y + 0.85 * margin), superFrame: lowerUIView)
+        
+        
     }
     
     // Layout functions
-    /* adds header given an image */
-    func addHeader() {
-        headerImageView.image = getHeaderImage()
-        headerImageView.tintColor = UIElementColor
-        headerImageView.backgroundColor = .clear
-        headerImageView.frame = CGRect(x: 0, y: 0, width: 2 * margin, height: 2  * margin)
-        headerImageView.center = CGPoint(x: view.frame.width / 2, y: 2 * margin)
-        view.addSubview(headerImageView)
+    
+    /* adds labels */
+    func addLabel(label: UILabel, alignment: NSTextAlignment, frame: CGRect?, center: CGPoint?, superFrame: UIView?) {
+        label.backgroundColor = .clear
+        if let f = frame { label.frame = f }
+        else { label.frame = CGRect(x: 0, y: 0, width: 100, height: fontSize + 5) }
+        label.textColor = UIElementColor
+        label.textAlignment = alignment
+        label.font = label.font.withSize(fontSize)
+        if let c = center { label.center = c }
+        if let sf = superFrame { sf.addSubview(label) }
+        else { view.addSubview(label) }
+        print("here")
     }
     
     /* adds the emojiPickerView */
@@ -69,7 +67,12 @@ class GeneralViewController: UniversalViewController, AKPickerViewDelegate, AKPi
         emojiPickerView.viewDepth = 50 * margin
         emojiPickerView.selectItem(7)
         emojiPickerView.pickerViewStyle = .flat
-        emojiPickerView.center = CGPoint(x: view.frame.width / 2, y: 3 * margin)
+        if let _ = self as? PopViewController {
+            emojiPickerView.center = CGPoint(x: view.frame.width / 2, y: 3.5 * margin)
+        }
+        else {
+            emojiPickerView.center = CGPoint(x: view.frame.width / 2, y: 3.1 * margin)
+        }
         lowerUIView.addSubview(emojiPickerView)
     }
     
@@ -87,7 +90,7 @@ class GeneralViewController: UniversalViewController, AKPickerViewDelegate, AKPi
         }
         button.center = CGPoint(x: view.frame.width * x, y: margin * y)
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-        button.rippleColor = UIElementColor.withAlphaComponent(0.2)
+        button.rippleColor = UIElementColor.withAlphaComponent(0.0)
         button.rippleBackgroundColor = UIElementColor.withAlphaComponent(0.1)
         button.rippleOverBounds = false
         button.trackTouchLocation = true
@@ -97,10 +100,6 @@ class GeneralViewController: UniversalViewController, AKPickerViewDelegate, AKPi
     
     // Getters
     func getMainButtonImage() -> UIImage {
-        return UIImage()
-    }
-    
-    func getHeaderImage() -> UIImage {
         return UIImage()
     }
     
@@ -119,6 +118,13 @@ class GeneralViewController: UniversalViewController, AKPickerViewDelegate, AKPi
     /* specifies the image located for each item */
     func pickerView(_ pickerView: AKPickerView, imageForItem item: Int) -> UIImage {
         return emojiArray[item]
+    }
+    
+    // AKPickerViewDelegate Functions
+    func pickerView(_ pickerView: AKPickerView, didSelectItem item: Int) {
+        if(item < emojiNameArray.count) {
+            emojiUILabel.text = emojiNameArray[item]
+        }
     }
     
     

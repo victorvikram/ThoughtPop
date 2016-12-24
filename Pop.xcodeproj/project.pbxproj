@@ -11,8 +11,9 @@
 		F816B0A91E0C7F3600930D45 /* ZFRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816B0A81E0C7F3600930D45 /* ZFRippleButton.swift */; };
 		F816B0AB1E0D8F0F00930D45 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816B0AA1E0D8F0F00930D45 /* SettingsViewController.swift */; };
 		F816B0AD1E0D99B700930D45 /* UniversalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816B0AC1E0D99B700930D45 /* UniversalViewController.swift */; };
+		F816B0AF1E0EEE9500930D45 /* Mind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816B0AE1E0EEE9500930D45 /* Mind.swift */; };
+		F816B0B11E0EEFD600930D45 /* Thought.swift in Sources */ = {isa = PBXBuildFile; fileRef = F816B0B01E0EEFD600930D45 /* Thought.swift */; };
 		F828BF501E085F8400957560 /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F828BF4F1E085F8400957560 /* AKPickerView.swift */; };
-		F828BF521E0872A100957560 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F828BF511E0872A100957560 /* UIImageExtension.swift */; };
 		F8A484C81E09B072000CB81C /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A484C71E09B072000CB81C /* PageViewController.swift */; };
 		F8A484CA1E09B26F000CB81C /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A484C91E09B26F000CB81C /* PopViewController.swift */; };
 		F8A484CC1E09F2E5000CB81C /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A484CB1E09F2E5000CB81C /* GeneralViewController.swift */; };
@@ -50,8 +51,9 @@
 		F816B0A81E0C7F3600930D45 /* ZFRippleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZFRippleButton.swift; sourceTree = "<group>"; };
 		F816B0AA1E0D8F0F00930D45 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F816B0AC1E0D99B700930D45 /* UniversalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversalViewController.swift; sourceTree = "<group>"; };
+		F816B0AE1E0EEE9500930D45 /* Mind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mind.swift; sourceTree = "<group>"; };
+		F816B0B01E0EEFD600930D45 /* Thought.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Thought.swift; sourceTree = "<group>"; };
 		F828BF4F1E085F8400957560 /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPickerView.swift; sourceTree = "<group>"; };
-		F828BF511E0872A100957560 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		F8A484C71E09B072000CB81C /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		F8A484C91E09B26F000CB81C /* PopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
 		F8A484CB1E09F2E5000CB81C /* GeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
@@ -145,8 +147,9 @@
 				F816B0AC1E0D99B700930D45 /* UniversalViewController.swift */,
 				F8A484C91E09B26F000CB81C /* PopViewController.swift */,
 				F8B0258A1E04CBC6009550B0 /* ThoughtViewController.swift */,
+				F816B0AE1E0EEE9500930D45 /* Mind.swift */,
+				F816B0B01E0EEFD600930D45 /* Thought.swift */,
 				F816B0AA1E0D8F0F00930D45 /* SettingsViewController.swift */,
-				F828BF511E0872A100957560 /* UIImageExtension.swift */,
 				F8B025B61E05BDB1009550B0 /* CustomTextField.swift */,
 				F8B025B81E05BF92009550B0 /* CustomTextView.swift */,
 				F828BF4F1E085F8400957560 /* AKPickerView.swift */,
@@ -369,9 +372,10 @@
 				F8B0258B1E04CBC6009550B0 /* ThoughtViewController.swift in Sources */,
 				F8B025891E04CBC6009550B0 /* AppDelegate.swift in Sources */,
 				F8B025B91E05BF92009550B0 /* CustomTextView.swift in Sources */,
+				F816B0B11E0EEFD600930D45 /* Thought.swift in Sources */,
 				F8A484CC1E09F2E5000CB81C /* GeneralViewController.swift in Sources */,
 				F8B025B71E05BDB1009550B0 /* CustomTextField.swift in Sources */,
-				F828BF521E0872A100957560 /* UIImageExtension.swift in Sources */,
+				F816B0AF1E0EEE9500930D45 /* Mind.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

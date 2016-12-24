@@ -9,12 +9,19 @@
 import UIKit
 
 class UniversalViewController: UIViewController {
+    
+    var margin: CGFloat!
+    var fontSize: CGFloat!
 
     var pageViewController: PageViewController
+    var UIElementColor: UIColor
+    
+    let headerImageView = UIImageView()
     
     // initializer for having access to the pageviewcontroller
     init(pageViewController pc: PageViewController) {
         pageViewController = pc
+        UIElementColor = pc.UIElementColor
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -24,8 +31,26 @@ class UniversalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        margin = pageViewController.margin
+        fontSize = margin / 3
+        
         // Do any additional setup after loading the view.
+        
+        // Header Image
+        addHeader()
+    }
+    
+    /* adds header given an image */
+    func addHeader() {
+        
+        headerImageView.image = getHeaderImage()
+        headerImageView.tintColor = UIElementColor
+        headerImageView.backgroundColor = .clear
+        headerImageView.frame = CGRect(x: 0, y: 0, width: 2 * margin, height: 2  * margin)
+        headerImageView.center = CGPoint(x: view.frame.width / 2, y: 2 * margin)
+        headerImageView.contentMode = .scaleAspectFit
+        view.addSubview(headerImageView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,12 +65,18 @@ class UniversalViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-         UIView.animate(withDuration: 0.5, animations: { self.view.backgroundColor = self.getBackground() })
+        UIView.animate(withDuration: 0.5, animations: { self.view.backgroundColor = self.getBackground()})
+        let currentViewControllerId = pageViewController.orderedViewControllers.index(of: self)
+        pageViewController.pageControl.currentPage = currentViewControllerId!
     }
     
     /* gets the background color */
     func getBackground() -> UIColor {
         return UIColor()
+    }
+    
+    func getHeaderImage() -> UIImage {
+        return UIImage()
     }
     
     

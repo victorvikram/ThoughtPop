@@ -27,6 +27,11 @@ class SettingsViewController: UniversalViewController {
         return background
     }
     
+    // Getters
+    override func getHeaderImage() -> UIImage {
+        return #imageLiteral(resourceName: "settings").withRenderingMode(.alwaysTemplate)
+    }
+    
 
     /*
     // MARK: - Navigation

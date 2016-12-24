@@ -7,17 +7,29 @@
 //
 
 import UIKit
+import SMPageControl
 
-class PageViewController: UIPageViewController, UIPageViewControllerDataSource, UIGestureRecognizerDelegate {
+class PageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+    
+    let UIElementColor = UIColor(displayP3Red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
+    
+    let scaleMargin = CGFloat(0.05)
+    let pageControl = SMPageControl(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+    var margin: CGFloat!
     
     var orderedViewControllers: [UIViewController]!
     var lastViewController: UIViewController!
+    
+    var pageControlUIView = UIView()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
     }
     
     override func viewDidLoad() {
+        
+        margin = scaleMargin * view.frame.height
+
         super.viewDidLoad()
     
         dataSource = self
@@ -28,14 +40,31 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         let viewControllers = [firstViewController]
         setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
         
-        if let _ = view.gestureRecognizers {
-            for gr in self.view.gestureRecognizers! {
-                gr.delegate = self
-            }
-        }
+        configurePageControl()
         
+        pageControlUIView.frame = pageControl.frame
+        
+        // covers the page controller
+        view.addSubview(pageControlUIView)
     }
     
+    func configurePageControl() {
+        pageControl.center = CGPoint(x: view.frame.width / 2, y: view.frame.height - margin)
+        pageControl.pageIndicatorTintColor = UIElementColor.withAlphaComponent(0.5)
+        pageControl.numberOfPages = 3
+        pageControl.currentPage = 1
+        pageControl.currentPageIndicatorTintColor = UIElementColor
+        pageControl.backgroundColor = .clear
+        pageControl.setImage(#imageLiteral(resourceName: "settings-pagecontrol-transparent"), forPage: 0)
+        pageControl.setCurrentImage(#imageLiteral(resourceName: "settings-pagecontrol"), forPage: 0)
+        pageControl.setImage(#imageLiteral(resourceName: "new-page-control-transparent"), forPage: 1)
+        pageControl.setCurrentImage(#imageLiteral(resourceName: "new-page-control"), forPage: 1)
+        pageControl.setImage(#imageLiteral(resourceName: "view-page-control-transparent"), forPage: 2)
+        pageControl.setCurrentImage(#imageLiteral(resourceName: "view-page-control"), forPage: 2)
+        pageControl.tapBehavior = SMPageControlTapBehavior.jump
+        pageControl.indicatorMargin = margin * 1.25
+        view.addSubview(pageControl)
+    }
     
     // PageViewController Datasource
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
@@ -45,16 +74,7 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         lastViewController = viewController
         
         return orderedViewControllers[nextVCIndex]
-        
-        /*if let _ = viewController as? ThoughtViewController {
-            return PopViewController(lastBackground: ThoughtViewController().background)
-        }
-        else if let _ = viewController as? SettingsViewController  {
-            return ThoughtViewController(lastBackground: SettingsViewController().background)
-        }
-        else {
-            return nil
-        }*/
+
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -64,30 +84,6 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         lastViewController = viewController
         
         return orderedViewControllers[nextVCIndex]
-        
-        /*
-        if let _ = viewController as? PopViewController {
-            print("in here")
-            return ThoughtViewController(lastBackground: PopViewController().background)
-        }
-        else if let _ = viewController as? ThoughtViewController  {
-            return SettingsViewController()
-        }
-        else {
-            return nil
-        }*/
-    }
-    
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        if let _ = gestureRecognizer as? UITapGestureRecognizer {
-            let touchPoint = touch .location(in: self.view)
-            if (touchPoint.y > 40 ){
-                return false
-            } else{
-                return true
-            }
-        }
-        return true
     }
     
     
@@ -95,16 +91,5 @@ class PageViewController: UIPageViewController, UIPageViewControllerDataSource, 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
