@@ -9,12 +9,10 @@
 import UIKit
 
 class GeneralViewController: UniversalViewController, AKPickerViewDelegate, AKPickerViewDataSource {
-    
-    
         
     // Emoji array
-    var emojiArray = [#imageLiteral(resourceName: "angry"), #imageLiteral(resourceName: "any"), #imageLiteral(resourceName: "bored"), #imageLiteral(resourceName: "confused"), #imageLiteral(resourceName: "crying"), #imageLiteral(resourceName: "embarrassed"), #imageLiteral(resourceName: "happy"), #imageLiteral(resourceName: "in-love"), #imageLiteral(resourceName: "nervous"), #imageLiteral(resourceName: "neutral"), #imageLiteral(resourceName: "sad"), #imageLiteral(resourceName: "sleepy"), #imageLiteral(resourceName: "surprised")]
-    let emojiNameArray = ["Angry", "Any", "Bored", "Confused", "Crying", "Embarrassed", "Happy", "In Love", "Nervous", "Neutral", "Sad", "Sleepy", "Surprised" ]
+    var emojiArray = [#imageLiteral(resourceName: "angry"), #imageLiteral(resourceName: "bored"), #imageLiteral(resourceName: "confused"), #imageLiteral(resourceName: "crying"), #imageLiteral(resourceName: "embarrassed"), #imageLiteral(resourceName: "happy"), #imageLiteral(resourceName: "neutral"), #imageLiteral(resourceName: "in-love"), #imageLiteral(resourceName: "nervous"), #imageLiteral(resourceName: "sad"), #imageLiteral(resourceName: "sleepy"), #imageLiteral(resourceName: "surprised")]
+    let emojiNameArray = ["Angry", "Bored", "Confused", "Crying", "Embarrassed", "Happy", "Any Emotion", "In Love", "Nervous", "Sad", "Sleepy", "Surprised" ]
     
     // UI Elements
     
@@ -32,7 +30,7 @@ class GeneralViewController: UniversalViewController, AKPickerViewDelegate, AKPi
         
         // Check Button
         let mainButtonImage = getMainButtonImage()
-        addButton(button: mainButton, image: mainButtonImage, x: 1/2, y: 5.5, wFactor: 2.1875, hFactor: 1.25, mainButton: true)
+        addButton(button: mainButton, image: mainButtonImage, x: 1/2, y: 5.5, wFactor: 2.1875, hFactor: 1.25, mainButton: true, superView: lowerUIView)
         
         // emojiUILabel Setup
         addLabel(label: emojiUILabel, alignment: .center, frame: nil, center: CGPoint(x: view.frame.width / 2, y: emojiPickerView.center.y + 0.85 * margin), superFrame: lowerUIView)
@@ -65,7 +63,7 @@ class GeneralViewController: UniversalViewController, AKPickerViewDelegate, AKPi
         emojiPickerView.backgroundColor = .clear
         emojiPickerView.interitemSpacing = 1/4 * margin
         emojiPickerView.viewDepth = 50 * margin
-        emojiPickerView.selectItem(7)
+        emojiPickerView.selectItem(6)
         emojiPickerView.pickerViewStyle = .flat
         if let _ = self as? PopViewController {
             emojiPickerView.center = CGPoint(x: view.frame.width / 2, y: 3.5 * margin)
@@ -77,7 +75,7 @@ class GeneralViewController: UniversalViewController, AKPickerViewDelegate, AKPi
     }
     
     /* performs necessary actions to add the three buttons in a row */
-    func addButton(button: ZFRippleButton, image: UIImage, x: CGFloat, y: CGFloat, wFactor: CGFloat = 1, hFactor: CGFloat = 1, mainButton: Bool = false) {
+    func addButton(button: ZFRippleButton, image: UIImage, x: CGFloat, y: CGFloat, wFactor: CGFloat = 1, hFactor: CGFloat = 1, mainButton: Bool = false, superView: UIView) {
         button.setImage(image, for: .normal)
         button.tintColor = UIElementColor
         button.frame = CGRect(x: 0, y: 0, width: margin * wFactor, height: margin * hFactor)
@@ -95,7 +93,7 @@ class GeneralViewController: UniversalViewController, AKPickerViewDelegate, AKPi
         button.rippleOverBounds = false
         button.trackTouchLocation = true
         button.shadowRippleEnable = false
-        lowerUIView.addSubview(button)
+        superView.addSubview(button)
     }
     
     // Getters

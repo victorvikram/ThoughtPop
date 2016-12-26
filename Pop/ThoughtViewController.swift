@@ -19,16 +19,14 @@ class ThoughtViewController: GeneralViewController, UITextViewDelegate {
     // UI Elements
     var titleTextField: CustomTextField!
     let titleTextFieldLabel = UILabel()
+    let photoButton = ZFRippleButton()
     var bodyTextView: CustomTextView!
     let bodyTextViewLabel = UILabel()
     let locationButton = ZFRippleButton()
     let timeButton = ZFRippleButton()
     var frequencyButton = ZFRippleButton()
     
-    //Changing Status Bar
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return UIStatusBarStyle.lightContent
-    }
+    var maxBodySize: CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +39,10 @@ class ThoughtViewController: GeneralViewController, UITextViewDelegate {
         // Title Text Field Label
         titleTextFieldLabel.text = "Title"
         addLabel(label: titleTextFieldLabel, alignment: .left, frame: CGRect(x: titleTextField.frame.minX, y: titleTextField.frame.maxY, width: 100, height: fontSize + 7), center: nil, superFrame: nil)
+        
+        // Photo button
+        let photoButtonImage = #imageLiteral(resourceName: "photo").withRenderingMode(.alwaysTemplate)
+        addButton(button: photoButton, image: photoButtonImage, x: 0.855, y: 4.4, wFactor: 1.5, hFactor: 1.2, superView: view)
         
         // Body Textview 
         addBodyTextView()
@@ -56,23 +58,31 @@ class ThoughtViewController: GeneralViewController, UITextViewDelegate {
         
         // Location Button
         let locationImage = #imageLiteral(resourceName: "location").withRenderingMode(.alwaysTemplate)
-        addButton(button: locationButton, image: locationImage, x: 1/4, y: 1.25, wFactor: 1.5, hFactor: 1.5)
+        addButton(button: locationButton, image: locationImage, x: 1/4, y: 1.25, wFactor: 1.5, hFactor: 1.5, superView: lowerUIView)
         
         
         // Time Button
         let timeImage = #imageLiteral(resourceName: "time").withRenderingMode(.alwaysTemplate)
-        addButton(button: timeButton, image: timeImage, x: 1/2, y: 1.25, wFactor: 1.5, hFactor: 1.5)
+        addButton(button: timeButton, image: timeImage, x: 1/2, y: 1.25, wFactor: 1.5, hFactor: 1.5, superView: lowerUIView)
         
         // Frequency Button
         let frequencyImage = #imageLiteral(resourceName: "frequency").withRenderingMode(.alwaysTemplate)
-        addButton(button: frequencyButton, image: frequencyImage, x: 3/4, y: 1.25, wFactor: 1.5, hFactor: 1.5)
+        addButton(button: frequencyButton, image: frequencyImage, x: 3/4, y: 1.25, wFactor: 1.5, hFactor: 1.5, superView: lowerUIView)
+        
+        // calculate maxBodySize
+        let headerRoom = titleTextField.frame.minY
+        let titleRoom = titleTextField.frame.height
+        let buttonRoom = frequencyButton.frame.height + margin
+        let pickerViewRoom = emojiPickerView.frame.height + margin
+        let mainButtonRoom = mainButton.frame.height + margin / 2
+        maxBodySize = view.frame.height - headerRoom - titleRoom - buttonRoom - pickerViewRoom - mainButtonRoom
     }
     
     // Layout Functions
     
     /* adds title text field and associated elements */
     func addTitleTextField() {
-        let titleFrame = CGRect(x: margin, y: 4 * margin, width: 7 * margin, height: 0.75 * margin)
+        let titleFrame = CGRect(x: margin, y: 4 * margin, width: view.frame.width - 4 * margin, height: 0.75 * margin)
         titleTextField = CustomTextField(color: UIElementColor, frame: titleFrame)
         view.addSubview(titleTextField)
     }
@@ -81,7 +91,6 @@ class ThoughtViewController: GeneralViewController, UITextViewDelegate {
     func addBodyTextView() {
         let bodyFrame = CGRect(x: margin, y: 5 * margin, width: view.frame.width - 2 * margin, height: margin)
         bodyTextView = CustomTextView(frame: bodyFrame, margin: margin, color: UIElementColor, delegate: self, textContainer: nil)
-       
         bodyTextView.isScrollEnabled = true
         view.addSubview(bodyTextView)
     }
@@ -114,22 +123,27 @@ class ThoughtViewController: GeneralViewController, UITextViewDelegate {
         // calculate the necessary size
         let oldHeight = bodyTextView.frame.height
 
-        let newSize = bodyTextView.sizeThatFits(CGSize(width: bodyTextView.frame.size.width, height: margin * 4))
+        var newSize = bodyTextView.sizeThatFits(CGSize(width: bodyTextView.frame.size.width, height: margin * 4))
         
         print("Old Size: ", oldHeight)
         print("Old Frame: ", bodyTextView.frame)
         print("New Size: ", newSize.height)
-        //if(oldHeight == newSize.height) { return }
+        
+        // if(oldHeight == newSize.height) { return }
+        
+        
         
         // if frame is increasing in size, first adjust frame
-        bodyTextView.frame = CGRect(x: bodyTextView.frame.minX, y: bodyTextView.frame.minY, width: bodyTextView.frame.width, height: newSize.height)
+        /* bodyTextView.frame = CGRect(x: bodyTextView.frame.minX, y: bodyTextView.frame.minY, width: bodyTextView.frame.width, height: newSize.height) */
         // Lower the lowerUIView
+        
+        if (newSize.height > maxBodySize) { newSize.height = maxBodySize }
+        
         let difference = newSize.height - oldHeight
         let oldY = lowerUIView.frame.minY
         UIView.animate(withDuration: 0.5, animations: {
             self.lowerUIView.frame = CGRect(x: 0, y: oldY + difference, width: self.view.frame.width, height: self.view.frame.height)})
-        
-        
+
         // change size of the textview
         bodyTextView.changeSize(newSize: newSize)
     }

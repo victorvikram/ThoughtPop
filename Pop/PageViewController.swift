@@ -11,6 +11,8 @@ import SMPageControl
 
 class PageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
+    let mind = Mind(firstThought: Thought(title: "The flooding smile", image: nil, body: "Protip: when you see someone, don’t smile immediately. Wait a half a second or so, and then let the smile flood across your face. Somehow it seems more genuine.", location: nil, time: nil))
+    
     let UIElementColor = UIColor(displayP3Red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
     
     let scaleMargin = CGFloat(0.05)

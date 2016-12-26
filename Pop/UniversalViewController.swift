@@ -12,6 +12,8 @@ class UniversalViewController: UIViewController {
     
     var margin: CGFloat!
     var fontSize: CGFloat!
+    var headingSize: CGFloat!
+    var bodySize: CGFloat!
 
     var pageViewController: PageViewController
     var UIElementColor: UIColor
@@ -34,6 +36,8 @@ class UniversalViewController: UIViewController {
         
         margin = pageViewController.margin
         fontSize = margin / 3
+        headingSize = 2 * margin / 3
+        bodySize = margin / 2
         
         // Do any additional setup after loading the view.
         

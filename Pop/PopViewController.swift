@@ -13,6 +13,13 @@ class PopViewController: GeneralViewController {
     // Color
     let background = UIColor(displayP3Red: 100/255, green: 5/255, blue: 255/255, alpha: 1.0)
     let lastBackground = UIColor(displayP3Red: 75/255, green: 0, blue: 200/255, alpha: 1.0)
+    
+    // textview for title and body
+    let scrollView = UIScrollView()
+    let titleLabel = UITextView()
+    let bodyView = UITextView()
+    
+    var currentThought: Thought!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +30,42 @@ class PopViewController: GeneralViewController {
         lowerUIView.backgroundColor = .clear
         lowerUIView.frame = CGRect(x: 0, y: 0.75 * margin, width: view.frame.width, height: view.frame.height)
         view.addSubview(lowerUIView)
+        
+        currentThought = pageViewController.mind.nextThought()
+        
+        // Add ScrollView to the view
+        let scrollViewY = mainButton.frame.maxY + margin / 2 + lowerUIView.frame.minY
+        scrollView.frame = CGRect(x: 0, y: scrollViewY, width: view.frame.width, height: view.frame.height - scrollViewY - 2 * margin)
+        
+        // Add view for title
+        titleLabel.text = currentThought.title
+        titleLabel.backgroundColor = .clear
+        titleLabel.textColor = UIElementColor
+        titleLabel.isEditable = false
+        titleLabel.isScrollEnabled = false
+        titleLabel.font = titleLabel.font?.withSize(headingSize)
+        let titleViewSize = titleLabel.sizeThatFits(CGSize(width: view.frame.width - 2 * margin, height: 6 * margin))
+        titleLabel.frame = CGRect(x: margin, y: 0, width: view.frame.width - 2 * margin, height: titleViewSize.height)
+        scrollView.addSubview(titleLabel)
+        
+        // add view for body 
+        bodyView.text = currentThought.body
+        bodyView.backgroundColor = .clear
+        bodyView.textColor = UIElementColor.withAlphaComponent(0.6)
+        bodyView.isScrollEnabled = false
+        bodyView.isEditable = false
+        bodyView.font = bodyView.font?.withSize(bodySize)
+        let bodyViewSize = bodyView.sizeThatFits(CGSize(width: view.frame.width - 2 * margin, height: 6 * margin))
+        bodyView.frame = CGRect(x: margin, y: titleLabel.frame.maxY, width: view.frame.width - 2 * margin, height: bodyViewSize.height)
+        scrollView.addSubview(bodyView)
+        
+        let heightOfContent = bodyViewSize.height + titleViewSize.height
+        scrollView.contentSize = CGSize(width: view.frame.width, height: heightOfContent)
+        
+        scrollView.isScrollEnabled = true
+        view.addSubview(scrollView)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

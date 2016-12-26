@@ -9,6 +9,14 @@
 import Foundation
 
 class Mind {
+    var thoughts: [Thought]
     
+    init(firstThought: Thought) {
+       thoughts = [firstThought]
+    }
+    
+    func nextThought() -> Thought {
+            return thoughts[0]
+    }
 }
 
