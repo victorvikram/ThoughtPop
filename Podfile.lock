@@ -1,12 +1,23 @@
 PODS:
+  - GoogleMaps (2.1.1):
+    - GoogleMaps/Maps (= 2.1.1)
+  - GoogleMaps/Base (2.1.1)
+  - GoogleMaps/Maps (2.1.1):
+    - GoogleMaps/Base
+  - GooglePlaces (2.1.1):
+    - GoogleMaps/Base (= 2.1.1)
   - SMPageControl (1.2)
 
 DEPENDENCIES:
+  - GoogleMaps
+  - GooglePlaces
   - SMPageControl
 
 SPEC CHECKSUMS:
+  GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
+  GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
   SMPageControl: 922892813001cfaf059e86e6801f46a967e9ee29
 
-PODFILE CHECKSUM: f506d95e566dd2fbeae6fbc7fdda0d49e4e83054
+PODFILE CHECKSUM: 0c2773f91c8b942d68da405c19c626c553bf09eb
 
 COCOAPODS: 1.1.1

@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		130414B19EDACEF2812CFE0A8BBB652E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		19F0DA4DA79169864A0D48712C25A738 /* SMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F353AD880C76B4DFB43255DEF9BF309 /* SMPageControl.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		21E9CA238E418F106B5A8E9A017430CD /* SMPageControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D7C2BD5DD0912F52B11E9FFC80E7F3C6 /* SMPageControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		19F0DA4DA79169864A0D48712C25A738 /* SMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 66013AA35AF7D8F07422B8678ED3FC1F /* SMPageControl.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		21E9CA238E418F106B5A8E9A017430CD /* SMPageControl-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E3490F3B6EAF336132082D66D436275 /* SMPageControl-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		72E8E1792B9EC55B0F3FBE2AE0FE53AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		80D9E9BD6F5FDC6714A24633B154FD43 /* Pods-Pop-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D5FDB7AC78C15C15A4F1DB24019BC8 /* Pods-Pop-dummy.m */; };
 		89922450FAD0F84377CBD526FE069001 /* Pods-Pop-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C97DB90C3FDA232CE5149915FAB141A8 /* Pods-Pop-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C48A46793EA445718A375792474DB90 /* SMPageControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E0ABF9CBFB3EC229CBC5194A41616A64 /* SMPageControl-dummy.m */; };
-		AB658D99302CD0FEF69EADD96EA03CD4 /* SMPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EBF583D49D74AADF70B0EB22979C3BD /* SMPageControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C48A46793EA445718A375792474DB90 /* SMPageControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B6AC5329F1BA40BEA75909FE0CB5F87 /* SMPageControl-dummy.m */; };
+		AB658D99302CD0FEF69EADD96EA03CD4 /* SMPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = C8720C4B5816D3673CCAFF2C80F6449E /* SMPageControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,27 +28,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0663E7A08C43A463AF051094BE850AC8 /* SMPageControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SMPageControl.modulemap; sourceTree = "<group>"; };
 		18D5FDB7AC78C15C15A4F1DB24019BC8 /* Pods-Pop-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pop-dummy.m"; sourceTree = "<group>"; };
 		1CD87B5C67C2628B7E2427DE6937D5F2 /* Pods-Pop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pop.debug.xcconfig"; sourceTree = "<group>"; };
+		1F76A7036A2744CDEDB06D8F1FD3ACA7 /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlaces.framework; path = Frameworks/GooglePlaces.framework; sourceTree = "<group>"; };
 		2C71208C064AD9765EE4CAE564D62C96 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E3490F3B6EAF336132082D66D436275 /* SMPageControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SMPageControl-umbrella.h"; sourceTree = "<group>"; };
 		393CEEFEDADC17DE333BDD163024D96B /* SMPageControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SMPageControl.framework; path = SMPageControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3EBF583D49D74AADF70B0EB22979C3BD /* SMPageControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMPageControl.h; sourceTree = "<group>"; };
+		42FF9CD16FBDC6453F52470AD60EB8A5 /* SMPageControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SMPageControl-prefix.pch"; sourceTree = "<group>"; };
 		4516EFBC43B05C2E846B7F57DDA3D9A4 /* Pods-Pop-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Pop-resources.sh"; sourceTree = "<group>"; };
-		4F35AAAEC37243C04AC4290CC61CA2D7 /* SMPageControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SMPageControl-prefix.pch"; sourceTree = "<group>"; };
+		4B6AC5329F1BA40BEA75909FE0CB5F87 /* SMPageControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SMPageControl-dummy.m"; sourceTree = "<group>"; };
 		4F8F35F27D03BD49FFF942D00E1B49B9 /* Pods_Pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Pop.framework; path = "Pods-Pop.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D5BF2893CD79EBD02E3F5E616ECBD99 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63937572DB6A4E2496EB3D8E7021C6CD /* Pods-Pop-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Pop-frameworks.sh"; sourceTree = "<group>"; };
-		6F353AD880C76B4DFB43255DEF9BF309 /* SMPageControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
+		65E1BF2170D407C7AD131FFFB9170FAD /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
+		66013AA35AF7D8F07422B8678ED3FC1F /* SMPageControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
 		7C8CF40906C0989F5BB30BE435F48EDA /* Pods-Pop-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Pop-acknowledgements.plist"; sourceTree = "<group>"; };
 		8318D3A065370DDA8E666B5EA59A6FF2 /* Pods-Pop.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Pop.modulemap"; sourceTree = "<group>"; };
+		85615B2DC661C1369466C64D202CEBD7 /* GooglePlaces.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		8B0D9CDDE6034A187A6A374EB96E5B51 /* SMPageControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SMPageControl.xcconfig; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9BB207226EF27EE42765B8BA070BB88E /* SMPageControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SMPageControl.xcconfig; sourceTree = "<group>"; };
-		BC03065D66AD51B5B650FCA4924976BE /* SMPageControl.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SMPageControl.modulemap; sourceTree = "<group>"; };
+		9C260749F2BC77900B36AE0BDC5A4C2A /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		B17455DB8F3B1124163BE4782F005162 /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsCore.framework; path = Maps/Frameworks/GoogleMapsCore.framework; sourceTree = "<group>"; };
+		C8720C4B5816D3673CCAFF2C80F6449E /* SMPageControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMPageControl.h; sourceTree = "<group>"; };
 		C97DB90C3FDA232CE5149915FAB141A8 /* Pods-Pop-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pop-umbrella.h"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CF5996B00E3C8793D88939D4991EF3C5 /* Pods-Pop-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Pop-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D7C2BD5DD0912F52B11E9FFC80E7F3C6 /* SMPageControl-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SMPageControl-umbrella.h"; sourceTree = "<group>"; };
-		E0ABF9CBFB3EC229CBC5194A41616A64 /* SMPageControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SMPageControl-dummy.m"; sourceTree = "<group>"; };
+		D0FA144388556697914F66D3DD7CCA5F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D813817E16F3B86304F5D295BF37DA41 /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
 		E32E52F601CFF88E95E96AA3A0E61D43 /* Pods-Pop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pop.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,18 +78,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		578867920E6E36CC2C5A2EACE9B005D8 /* Support Files */ = {
+		0AC99C5D4A42EAF78299AF4189F0EAF0 /* SMPageControl */ = {
 			isa = PBXGroup;
 			children = (
-				5D5BF2893CD79EBD02E3F5E616ECBD99 /* Info.plist */,
-				BC03065D66AD51B5B650FCA4924976BE /* SMPageControl.modulemap */,
-				9BB207226EF27EE42765B8BA070BB88E /* SMPageControl.xcconfig */,
-				E0ABF9CBFB3EC229CBC5194A41616A64 /* SMPageControl-dummy.m */,
-				4F35AAAEC37243C04AC4290CC61CA2D7 /* SMPageControl-prefix.pch */,
-				D7C2BD5DD0912F52B11E9FFC80E7F3C6 /* SMPageControl-umbrella.h */,
+				C8720C4B5816D3673CCAFF2C80F6449E /* SMPageControl.h */,
+				66013AA35AF7D8F07422B8678ED3FC1F /* SMPageControl.m */,
+				51C76EB13A63B5645B83A6966B0DEFCA /* Support Files */,
+			);
+			name = SMPageControl;
+			path = SMPageControl;
+			sourceTree = "<group>";
+		};
+		196DB5132E7AC0BF705F1533779AA85C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D813817E16F3B86304F5D295BF37DA41 /* GoogleMapsBase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BBC5094FB7F5696A9B09E39F64BC658 /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				8F9DF22332392CC921DCE33A2C960D10 /* Base */,
+				E16071CA57E644C3E0C49464AD82CF88 /* Maps */,
+			);
+			name = GoogleMaps;
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		51C76EB13A63B5645B83A6966B0DEFCA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0FA144388556697914F66D3DD7CCA5F /* Info.plist */,
+				0663E7A08C43A463AF051094BE850AC8 /* SMPageControl.modulemap */,
+				8B0D9CDDE6034A187A6A374EB96E5B51 /* SMPageControl.xcconfig */,
+				4B6AC5329F1BA40BEA75909FE0CB5F87 /* SMPageControl-dummy.m */,
+				42FF9CD16FBDC6453F52470AD60EB8A5 /* SMPageControl-prefix.pch */,
+				2E3490F3B6EAF336132082D66D436275 /* SMPageControl-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SMPageControl";
+			sourceTree = "<group>";
+		};
+		54ADBD61D95034A2305F6E69A320468E /* GooglePlaces */ = {
+			isa = PBXGroup;
+			children = (
+				EDAB56955BFAC5BE952B86340DA98FB6 /* Frameworks */,
+				F2CBEF1CC673BF4A73F9025DC804B693 /* Resources */,
+			);
+			name = GooglePlaces;
+			path = GooglePlaces;
 			sourceTree = "<group>";
 		};
 		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
@@ -94,23 +139,12 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		7C1FB1ABB8FBF153B63BEC066E472809 /* SMPageControl */ = {
-			isa = PBXGroup;
-			children = (
-				3EBF583D49D74AADF70B0EB22979C3BD /* SMPageControl.h */,
-				6F353AD880C76B4DFB43255DEF9BF309 /* SMPageControl.m */,
-				578867920E6E36CC2C5A2EACE9B005D8 /* Support Files */,
-			);
-			name = SMPageControl;
-			path = SMPageControl;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				8FD0B4AEAF82C16F25BCD165B3DC37B7 /* Pods */,
+				FC7B15FAEC497D312F9AFF71FBF75A0C /* Pods */,
 				BB7484926A25B248077F857A6B6FE3FD /* Products */,
 				8305190CE6DAE66A1EB3396F4EE74E6F /* Targets Support Files */,
 			);
@@ -124,12 +158,12 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		8FD0B4AEAF82C16F25BCD165B3DC37B7 /* Pods */ = {
+		8F9DF22332392CC921DCE33A2C960D10 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				7C1FB1ABB8FBF153B63BEC066E472809 /* SMPageControl */,
+				196DB5132E7AC0BF705F1533779AA85C /* Frameworks */,
 			);
-			name = Pods;
+			name = Base;
 			sourceTree = "<group>";
 		};
 		93E3EC860AF8CB50CE4D47BC0CC9BFAA /* Pods-Pop */ = {
@@ -150,6 +184,15 @@
 			path = "Target Support Files/Pods-Pop";
 			sourceTree = "<group>";
 		};
+		979078C339631C7433679AE267BB8C0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65E1BF2170D407C7AD131FFFB9170FAD /* GoogleMaps.framework */,
+				B17455DB8F3B1124163BE4782F005162 /* GoogleMapsCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BB7484926A25B248077F857A6B6FE3FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +208,49 @@
 				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C8039BE2C157D3978DD0E2BC5F89B1CC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C260749F2BC77900B36AE0BDC5A4C2A /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E16071CA57E644C3E0C49464AD82CF88 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				979078C339631C7433679AE267BB8C0E /* Frameworks */,
+				C8039BE2C157D3978DD0E2BC5F89B1CC /* Resources */,
+			);
+			name = Maps;
+			sourceTree = "<group>";
+		};
+		EDAB56955BFAC5BE952B86340DA98FB6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F76A7036A2744CDEDB06D8F1FD3ACA7 /* GooglePlaces.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F2CBEF1CC673BF4A73F9025DC804B693 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				85615B2DC661C1369466C64D202CEBD7 /* GooglePlaces.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FC7B15FAEC497D312F9AFF71FBF75A0C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4BBC5094FB7F5696A9B09E39F64BC658 /* GoogleMaps */,
+				54ADBD61D95034A2305F6E69A320468E /* GooglePlaces */,
+				0AC99C5D4A42EAF78299AF4189F0EAF0 /* SMPageControl */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,7 +480,7 @@
 		};
 		B0C8729BB997DFF565C25DA6153F82A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9BB207226EF27EE42765B8BA070BB88E /* SMPageControl.xcconfig */;
+			baseConfigurationReference = 8B0D9CDDE6034A187A6A374EB96E5B51 /* SMPageControl.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -470,7 +556,7 @@
 		};
 		F9430E769627A82860F8998D7D3774E8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9BB207226EF27EE42765B8BA070BB88E /* SMPageControl.xcconfig */;
+			baseConfigurationReference = 8B0D9CDDE6034A187A6A374EB96E5B51 /* SMPageControl.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

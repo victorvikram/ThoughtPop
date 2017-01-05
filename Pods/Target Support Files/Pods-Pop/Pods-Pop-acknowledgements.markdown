@@ -1,6 +1,14 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## GoogleMaps
+
+Copyright 2016 Google
+
+## GooglePlaces
+
+Copyright 2016 Google
+
 ## SMPageControl
 
 Copyright (C) 2012 by Spaceman Labs

@@ -42,7 +42,7 @@ class ThoughtViewController: GeneralViewController, UITextViewDelegate {
         
         // Photo button
         let photoButtonImage = #imageLiteral(resourceName: "photo").withRenderingMode(.alwaysTemplate)
-        addButton(button: photoButton, image: photoButtonImage, x: 0.855, y: 4.4, wFactor: 1.5, hFactor: 1.2, superView: view)
+        addButton(button: photoButton, image: photoButtonImage, x: 0.855, y: 4.47, wFactor: 1.5, hFactor: 1.2, superView: view)
         
         // Body Textview 
         addBodyTextView()

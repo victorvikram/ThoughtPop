@@ -4,6 +4,10 @@
 <dict>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We want to remind you of your thoughts at the place you want</string>
+	<key>NSLocationUsageDescription</key>
+	<string>We want to remind you of your thoughts at the place you want even when you&apos;re using the app</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
