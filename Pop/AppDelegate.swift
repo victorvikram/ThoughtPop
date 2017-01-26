@@ -21,12 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         
         let pageViewController = PageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        //window?.rootViewController = pageViewController
+        window?.rootViewController = pageViewController
         
         GMSServices.provideAPIKey("AIzaSyAZNQJ2Cu3M8JLstpjvLek9LVly4DZByn0")
         GMSPlacesClient.provideAPIKey("AIzaSyAZNQJ2Cu3M8JLstpjvLek9LVly4DZByn0")
         
-        window?.rootViewController = MapViewController()
+        //window?.rootViewController = MapViewController()
         window?.makeKeyAndVisible()
         
         
